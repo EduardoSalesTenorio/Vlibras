@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>VLibras no App</title>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</head>
+<body>
+    <!-- Div do VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- Texto do diálogo -->
+    <p id="dialogo">Este é o texto inicial do diálogo.</p>
+
+    <!-- Ativando o VLibras automaticamente -->
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        // Aguarde um pouco para garantir que o VLibras carregue
+        setTimeout(() => {
+            let botao = document.querySelector('[vw-access-button]');
+            if (botao) {
+                botao.click(); // Simula o clique para ativar automaticamente
+            }
+        }, 2000); // Espera 2 segundos antes de ativar
+    </script>
+</body>
+</html>
